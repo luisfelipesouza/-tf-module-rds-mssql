@@ -112,6 +112,8 @@ resource "aws_db_parameter_group" "default" {
 }
 
 resource "aws_db_event_subscription" "default" {
+  count     = var.sns_topic_arn == "" ? 0 : 1
+  
   name      = "event-${local.identifier}"
   sns_topic = var.sns_topic_arn
 

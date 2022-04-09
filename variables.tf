@@ -92,4 +92,5 @@ variable "publicly_accessible" {
 }
 variable "sns_topic_arn"{
     type = string
+    default = ""
 }
