@@ -1,5 +1,5 @@
 output "db_host" {
-  value = aws_db_instance.db_instance.endpoint
+  value = trim(aws_db_instance.db_instance.endpoint, ":1433")
 }
 output "db_username" {
   value = aws_db_instance.db_instance.username
